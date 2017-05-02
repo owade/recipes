@@ -1,0 +1,31 @@
+<h1>RECIPES HOMEPAGE</h1>
+
+<br />
+
+<table class = "table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Ingredients No</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @recipes.each do |i| %>
+  <tr>
+    <td><%= i.name %></td>
+    <td><%= i.description %></td>
+    <td><%= link_to(i.ingredients.size,show_ing_path(i)) %></td>
+    <td><%= link_to("Add Ingredient",new_ing_path(i))  %></td>
+  </tr>
+  <% end %>
+
+  </tbody>
+
+</table>
+
+
+ <%-# button_to "ADD RECIPE", action: "new" , method: :get -%>
+
+<%= link_to("Add new Recipe",new_recipes_path,:class => "btn btn-success")%>

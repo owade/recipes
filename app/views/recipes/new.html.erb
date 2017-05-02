@@ -1,0 +1,14 @@
+
+
+
+<h3>FORM FOR NEW RECIPE</h3>
+
+
+<%= bootstrap_form_for(@recipe,:url => recipes_path) do |f| %>
+    <%= f.text_field :name , :required => true%>
+    <%= f.text_area :description,:required => true, :rows => 7 %>
+    <%= f.submit 'Submit' %>
+<% end %>
+
+<br />
+<%= render(:partial => 'button') %>

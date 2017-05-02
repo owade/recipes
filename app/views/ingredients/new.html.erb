@@ -1,0 +1,13 @@
+<h1>New Ingredient Form</h1>
+
+<p>Add Ingredient for <%= Recipe.find(params[:id]).name %> recipe</p>
+
+<%= bootstrap_form_for(@ingredient,:url => ingredients_path) do |f| %>
+    <%= f.text_field :recipe_id , :required => true , :readonly => true , :value => params[:id]%>
+    <%= f.text_field :name , :required => true%>
+    <%= f.text_area :description,:required => true, :rows => 7 %>
+    <%= f.submit 'Submit' %>
+<% end %>
+<br />
+
+<%= render(:partial => 'recipes/button') %>

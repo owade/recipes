@@ -1,0 +1,21 @@
+<h2>Showing Ingredient/s for : <%= @ing_name %></h2>
+<table class = "table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @ingredients.each do |i| %>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.description %></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>
+
+<br />
+
+<%= render(:partial => 'recipes/button') %>
